@@ -44,6 +44,7 @@ require "inc/adminauth.php";
                         } else {
                             $page = 1;
                         }
+                        
 
                         // set how many cards to display per page
                         $cards_per_page = 9;
