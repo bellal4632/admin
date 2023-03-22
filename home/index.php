@@ -57,13 +57,13 @@ $row1 = mysqli_fetch_assoc($result1);
                     ?>
                         <div class="col-lg-4">
                             <div class="card mb-4">
-                                <img height="220px" src="../a.assets/article_image/<?php echo $row["images"]; ?>" class="card-img-top" alt="...">
-                                <div style=" font-size: 15px; text-align: justify; height:90px; display: flex; align-items: center;" class="card-header"><b>
+                                <img height="220px" src="../a.assets/article_image/<?php echo $row["images"]; ?>" class="card-img-top" alt="<?php echo $row["title"]; ?>">
+                                <div style="font-size: 13px; text-align: justify; height:60px; display: flex; align-items: start;" class="card-header"><b>
                                         <a class="link-dark" style="text-decoration:none" href="details.php?id=<?= $row['id'] ?>"> <?php echo implode(' ', array_slice(explode(' ', $row['title']), 0, 9)); ?> </a></b>
                                 </div>
                                 <div class="card-body">
                                     <small>
-                                        <p style="text-align: justify; height:105px; display: flex; align-items: center;" class="card-text"><?php echo implode(' ', array_slice(explode(' ', $row['description']), 0, 30)); ?>...
+                                        <p style="text-align: justify; height:140px; display: flex; align-items: start;" class="card-text"><?php echo implode(' ', array_slice(explode(' ', $row['description']), 0, 35)); ?>...
                                         </p>
                                     </small>
                                 </div>
@@ -125,13 +125,43 @@ $row1 = mysqli_fetch_assoc($result1);
                         </div>
                     </div>
                 </div>
+                 <!-- Categories widget-->
+                 <?php require "inc/leatest.php"; ?>
                 <!-- Categories widget-->
                 <?php require "inc/category.php"; ?>
                 <!-- Side widget-->
                 <div class="card mb-4">
                     <div class="card-header">Login</div>
-                    <div class="card-body">You can put anything you want inside of these side widgets. They are easy to
-                        use, and feature the Bootstrap 5 card component!</div>
+                    <div class="card-body">
+                        <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
+
+                            <div class="col">
+                                <div class="col mb-1">
+                                    <label for="email" class="mb-1" >E-mail</label>
+                                    <input type="text" class="form-control" placeholder="Enter Email" id="email" name="email" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please Enter Third Slider Title.
+                                    </div>
+                                </div>
+                                <div class="col mb-1">
+                                    <label for="password" class="mb-1">Password</label>
+                                    <input type="password" class="form-control" placeholder="Enter Password" id="password" name="password" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please Enter Third Slider Title.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center mt-2">
+                                <button type="submit" class="btn btn-primary col-5 col-sm-5" name="submit"><b>Log In</b></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

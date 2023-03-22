@@ -34,11 +34,15 @@ require "inc/adminauth.php";
                 </div>
                 <!-- /.container-fluid -->
 
+
+                
+
+
             </div>
             <!-- End of Main Content -->
 
-             <!-- Footer -->
-             <?php require "inc/footer.php"; ?>
+            <!-- Footer -->
+            <?php require "inc/footer.php"; ?>
 </body>
 
 </html>

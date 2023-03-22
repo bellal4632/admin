@@ -1,7 +1,7 @@
 <div class="card mb-4">
     <div class="card-header">Categories</div>
     <div class="card-body">
-        <ol class="list-group ">
+        <ul class="list-group list-group-flush">
             <?php
             $c = "select categories.*,count(*) as total from categories,articles where articles.category_id=categories.id  group by articles.category_id;";
             $cr = $conn->query($c);
@@ -16,6 +16,6 @@
                     <span class="badge bg-dark rounded-pill"><?= $row['total'] ?></span>
                 </li>
             <?php } ?>
-        </ol>
+        </ul>
     </div>
 </div>
