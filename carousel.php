@@ -52,20 +52,20 @@ require "inc/adminauth.php";
                             if (isset($_FILES['image_1'])) {
                                 $im1 = $_FILES['image_1'];
                                 $image_1 = uniqid() . ".png";
-                                move_uploaded_file($_FILES['image_1']['tmp_name'], 'a.assets/carousel/' . $image_1);
+                                move_uploaded_file($_FILES['image_1']['tmp_name'], '../admin/a.assets/carousel/' . $image_1);
                             }
                             $image_2 = null;
                             if (isset($_FILES['image_2'])) {
                                 $im2 = $_FILES['image_2'];
                                 $image_2 = uniqid() . ".png";
-                                move_uploaded_file($_FILES['image_2']['tmp_name'], 'a.assets/carousel/' . $image_2);
+                                move_uploaded_file($_FILES['image_2']['tmp_name'], '../admin/a.assets/carousel/' . $image_2);
                             }
 
                             $image_3 = null;
                             if (isset($_FILES['image_3'])) {
                                 $im3 = $_FILES['image_3'];
                                 $image_3 = uniqid() . ".png";
-                                move_uploaded_file($_FILES['image_3']['tmp_name'], 'a.assets/carousel/' . $image_3);
+                                move_uploaded_file($_FILES['image_3']['tmp_name'], '../admin/a.assets/carousel/' . $image_3);
                             }
                             // Insert data into database
                             $sql = "INSERT INTO carousel (title_1, image_1, title_2,  image_2, title_3, image_3)

@@ -39,9 +39,11 @@
         <div id="collapseArticle" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Customize Articles:</h6>
-                <a class="collapse-item" href="article_list.php">All Articles</a>
-                <a class="collapse-item" href="article_pending.php">Pending Articles</a>
                 <a class="collapse-item" href="article_add.php">Add Article</a>
+                <a class="collapse-item" href="article_pending.php">Pending Articles</a>
+                <a class="collapse-item" href="article_list.php">All Articles</a>                
+                <a class="collapse-item text-danger" href="article_deleted.php">Deleted Articles</a>
+                
             </div>
         </div>
     </li>

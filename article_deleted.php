@@ -52,7 +52,7 @@ require "inc/adminauth.php";
                         $limit = $cards_per_page;
                         $offset = ($page - 1) * $cards_per_page;
 
-                        $result = mysqli_query($conn, "SELECT * FROM articles WHERE active = 1 ORDER BY id LIMIT $limit OFFSET $offset");
+                        $result = mysqli_query($conn, "SELECT * FROM articles WHERE active =4 ORDER BY id LIMIT $limit OFFSET $offset");
 
                         // Fetch data and display in table
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -64,15 +64,7 @@ require "inc/adminauth.php";
                                     <div class="card-header"><b>
                                             <a class="link-dark" style="text-decoration:none" href=""> <?php echo implode(' ', array_slice(explode(' ', $row['title']), 0, 5)); ?> </a></b>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="row mb-2">
-                                            
-                                        <small>
-                                            <p class="card-text"><?php echo implode(' ', array_slice(explode(' ', $row['description']), 0, 35)); ?>...
-                                            </p>
-                                        </small>
-
-                                    </div>
+                                    
                                     <div class="card-footer d-flex justify-content-center">
                                         <small class="text-muted">
 
@@ -87,8 +79,6 @@ require "inc/adminauth.php";
                                                     <i class="fas fa-edit px-2"></i>Decline</a>
                                                 <a class="btn btn-success" href="inc/article_publish.php?id=<?= $row['id'] ?>" role="button">
                                                     <i class="fas fa-edit px-2"></i>Publish</a>
-
-
                                             </div>
                                         </small>
                                     </div>

@@ -14,6 +14,6 @@ elseif(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] && $_SESSION['role'
 
 }
 else{
-    header("location: home/index.php");
+    header("location: ../home/index.php");
 }
 ?>

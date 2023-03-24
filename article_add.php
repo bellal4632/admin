@@ -1,6 +1,3 @@
-
-
-
 <?php require "inc/head.php"; ?>
 <?php
 require "inc/adminauth.php";
@@ -36,37 +33,37 @@ require "inc/adminauth.php";
                     <hr>
 
                     <?php
-require "inc/config.php";
-require "inc/adminauth.php";
-if (isset($_POST['submit'])) {
-    $title = $conn->escape_string($_POST['atitle']);
-    $desc = $conn->escape_string($_POST['adesc']);
-    $cat = $_POST['acat'];
-    $tag = $_POST['atag'];
-    $image = null;
-    if (isset($_FILES['aimage'])) {
-        $im = $_FILES['aimage'];
-        $image = uniqid() . ".png";
-        move_uploaded_file($_FILES['aimage']['tmp_name'], 'a.assets/article_image/' . $image);
-    }
-    $sql = "insert into articles values(null,'" . $cat . "','" . $title . "','" . $desc . "','" . $image . "','1','" . $_SESSION['userid'] . "','" . $tag . "','',null)";
+                    require "inc/config.php";
+                    require "inc/adminauth.php";
+                    if (isset($_POST['submit'])) {
+                        $title = $conn->escape_string($_POST['atitle']);
+                        $desc = $conn->escape_string($_POST['adesc']);
+                        $cat = $_POST['acat'];
+                        $tag = $_POST['atag'];
+                        $image = null;
+                        if (isset($_FILES['aimage'])) {
+                            $im = $_FILES['aimage'];
+                            $image = uniqid() . ".png";
+                            move_uploaded_file($_FILES['aimage']['tmp_name'], 'a.assets/article_image/' . $image);
+                        }
+                        $sql = "insert into articles values(null,'" . $cat . "','" . $title . "','" . $desc . "','" . $image . "','1','" . $_SESSION['userid'] . "','" . $tag . "','',null)";
 
-    if ($conn->query($sql) === TRUE) {
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        if ($conn->query($sql) === TRUE) {
+                            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
         New Article Added Successfully!
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>';
-    } else {
-        echo '<div class="alert alert-danger" role="alert"
+                        } else {
+                            echo '<div class="alert alert-danger" role="alert"
         >Error: ' . $sql . '<br>' . $conn->error . ' 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>';
-    }
-}
-$q = "select * from categories where 1";
-$r = $conn->query($q);
-?>
-                    
+                        }
+                    }
+                    $q = "select * from categories where 1";
+                    $r = $conn->query($q);
+                    ?>
+
 
                     <form method="post" enctype="multipart/form-data">
                         <div class="mb-2">
