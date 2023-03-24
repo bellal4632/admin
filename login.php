@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
 
 
 <?php require "inc/head.php"; ?>
-<title>Admin - Login</title>
+<title>Login</title>
 </head>
 
 <body class="bg-gradient-primary">

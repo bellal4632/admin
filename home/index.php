@@ -125,11 +125,11 @@ $row1 = mysqli_fetch_assoc($result1);
                         </div>
                     </div>
                 </div>
-                 <!-- Categories widget-->
+                 <!-- Leatest Post widget-->
                  <?php require "inc/leatest.php"; ?>
                 <!-- Categories widget-->
                 <?php require "inc/category.php"; ?>
-                <!-- Side widget-->
+                <!-- Log In widget-->
                 <div class="card mb-4">
                     <div class="card-header">Login</div>
                     <div class="card-body">

@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php require "inc/head.php"; ?>
-<title>SB Admin 2 - Register</title>
+<title>Register</title>
 </head>
 
 <body class="bg-gradient-primary">
